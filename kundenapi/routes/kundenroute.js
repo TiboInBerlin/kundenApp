@@ -25,4 +25,14 @@ router.post('/', function(req,res){
   })
 });
 
+router.get('/:id', function(req, res){
+  db.Kunden.findById(req.params.id)
+    .then(function(idFound){
+      res.json(idFound);
+    })
+    .catch(function(err){
+      res.send(err);
+    })
+})
+
 module.exports = router;
