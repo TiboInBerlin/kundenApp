@@ -33,6 +33,17 @@ router.get('/:id', function(req, res){
     .catch(function(err){
       res.send(err);
     })
-})
+});
+
+router.put('/:id', function (req, res){
+  //res.send("update route!");
+  db.Kunden.findOneAndUpdate({_id: req.params.id}, req.body, {new:true})
+  .then(function(kunde){
+    res.json(kunde);
+  })
+  .catch(function(err){
+    res.send(err);
+  })
+});
 
 module.exports = router;
