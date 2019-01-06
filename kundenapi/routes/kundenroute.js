@@ -1,5 +1,5 @@
-const express = require('express');
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
 var db = require('../models');
 
 //Standardmäßig werden wir alle kunden listen
@@ -44,6 +44,16 @@ router.put('/:id', function (req, res){
   .catch(function(err){
     res.send(err);
   })
+});
+
+router.delete('/:id', function (req, res){
+  db.Kunden.remove({_id: req.params.id})
+  .then(function(){
+    res.json({message: 'kunde war gerade gelöscht!'});
+  })
+  .catch(function(err){
+    res.send(err);
+  });
 });
 
 module.exports = router;
