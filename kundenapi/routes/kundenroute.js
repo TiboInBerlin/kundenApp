@@ -13,6 +13,7 @@ router.get('/', function(req, res){
   })
 });
 
+
 //POST/kunden: Route um neuen Kunden zu erstellen
 router.post('/', function(req,res){
   console.log(req.body)
@@ -25,6 +26,7 @@ router.post('/', function(req,res){
   })
 });
 
+//Kunde mit spezifischen id erhalten
 router.get('/:id', function(req, res){
   db.Kunden.findById(req.params.id)
     .then(function(idFound){
@@ -35,6 +37,7 @@ router.get('/:id', function(req, res){
     })
 });
 
+//Kunden bearbeiten
 router.put('/:id', function (req, res){
   //res.send("update route!");
   db.Kunden.findOneAndUpdate({_id: req.params.id}, req.body, {new:true})
@@ -46,14 +49,16 @@ router.put('/:id', function (req, res){
   })
 });
 
+//Kunden löschen
 router.delete('/:id', function (req, res){
   db.Kunden.remove({_id: req.params.id})
   .then(function(){
-    res.json({message: 'kunde war gerade gelöscht!'});
+    res.json({message: 'kunde wurde gerade gelöscht!'});
   })
   .catch(function(err){
     res.send(err);
   });
 });
+
 
 module.exports = router;

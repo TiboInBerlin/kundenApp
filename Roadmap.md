@@ -21,16 +21,15 @@ Ziel: Ein App erstellen um Kundendaten zu verwalten.
    | PLZ        | nummer             |
    | Ort        | string             |
 
-   1.3 Single Seite erstellen mit 3 Kunden
 
-   1.4 Route erstellen
+
+   1.3 Route erstellen
 
    - GET/kunden -  Darstellung von allen Kunden
-   - GET/kunden/:id - Kundendaten von einer spezifischen Kunde abrufen 
    - POST/kunden - Kunde anlegen
-   - DELETE/kunden/:id - Kunde löschen
+   - GET/kunden/:id - Kundendaten von einer spezifischen Kunde abrufen 
    - PUT/kunden/:id - Kundendaten bearbeiten
-   - GET/kunden?nachname=Schmidt - Kunde nach name suchen
+   - DELETE/kunden/:id - Kunde löschen
 
 2. Frontend mir React.js erstellen
 
@@ -39,13 +38,19 @@ Ziel: Ein App erstellen um Kundendaten zu verwalten.
    2.2 Components Hierarchy:
 
    - KundenApp
-     - KundeForm
-     - KundeSuche
-       - KundeItem 
+     - KundenListe
+       - KundeForm
+       - KundeSuche
+         - KundeItem 
 
-   2.3 mit Server verbinden
+   2.3 Components erstellen und mit Server verbinden
 
-3. Prüfen
+3. Suche
+
+   1. Input Feld in React
+   2. GET/kunden?nachname=Schmidt - Kunde nach name suchen
+
+4. Prüfen
 
    3.1 API: https://blog.mwaysolutions.com/2014/06/05/10-best-practices-for-better-restful-api/
 
