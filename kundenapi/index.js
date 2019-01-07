@@ -13,6 +13,6 @@ app.get('/', function(req, res){
 
 app.use('/kunden', kundenRoute);
 
-app.listen(process.env.PORT || 8080, () => {
+app.listen(8080, () => {
       console.log("Kunden API gestartet!!!");
   });

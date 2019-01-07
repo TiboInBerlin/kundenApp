@@ -41,9 +41,7 @@ Ziel: Ein App erstellen um Kundendaten zu verwalten.
      - KundenListe
        - KundeForm
        - KundeSuche
-         - KundeItem 
-
-   2.3 Components erstellen und mit Server verbinden
+         - Kunde 
 
 3. Suche
 

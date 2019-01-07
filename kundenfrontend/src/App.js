@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import KundenListe from './KundenListe';
 import './App.css';
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
-      KundenApp goes React!
+      <KundenListe />
       </div>
     );
   }
