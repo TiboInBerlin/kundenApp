@@ -41,7 +41,7 @@ Ziel: Ein App erstellen um Kundendaten zu verwalten.
      - KundenListe
        - KundeForm
        - KundeSuche
-         - Kunde 
+         - Kunde (Daten, Kunde bearbeiten, Kunde löschen,)
 
 3. Suche
 
