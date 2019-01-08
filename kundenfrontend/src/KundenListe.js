@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Kunde from './Kunde';
 import KundeForm from './KundeForm';
 import './Kunde.css';
-const ApiUrl = '/kunden'; //Wenn Sie das URL von API ändern möchten, brauchen Sie nur es hier zu ändern!
+const ApiUrl = '/kunden/'; //Wenn Sie das URL von API ändern möchten, brauchen Sie nur es hier zu ändern!
 
 class KundenListe extends Component {
 
@@ -75,11 +75,39 @@ class KundenListe extends Component {
       this.setState({kunden: [...this.state.kunden, neueKunde]})
     })
   }
+
+//Verbindung mit DELETE Route
+  deleteKunde(id){
+    const idUrl = ApiUrl + id;
+    fetch(idUrl, {
+      method: 'delete',
+    })
+    .then(resp => {
+      if(!resp.ok) {
+        if(resp.status >=400 && resp.status <500){
+          return resp.json().then(data => {
+            let err = {errorMessage: data.message};
+            throw err;
+          })
+        } else {
+          let err = {errorMessage: 'Bitte versuchen Sie es später an, der Server antwortet nicht'};
+          throw err;
+        }
+      }
+      return resp.json();
+    })
+    .then(() =>{
+      const kunden = this.state.kunden.filter(kunde => kunde._id !== id) //wir wollen alle kunde ausser die Kunde zu löschen
+      this.setState({kunden: kunden})
+    })
+  }
+
   render(){
     const kunden = this.state.kunden.map((k) => (
         <Kunde
           key={k._id}
           {...k}
+          onDelete={this.deleteKunde.bind(this,k._id)}
         />
     ));
 

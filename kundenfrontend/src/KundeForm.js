@@ -69,6 +69,7 @@ class KundeForm extends Component {
       this.state.inputOrt
     )
   }
+
   render() {
     return(
       <div>

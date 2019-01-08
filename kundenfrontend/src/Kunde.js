@@ -7,7 +7,8 @@ const Kunde = ({
   geschlecht,
   strasse,
   postleitzahl,
-  ort
+  ort,
+  onDelete
   }) => (
     <li>
     {nachname}
@@ -16,6 +17,7 @@ const Kunde = ({
     {strasse}
     {postleitzahl}
     {ort}
+    <button onClick={onDelete}> Kunde löschen </button>
     </li>
 )
 

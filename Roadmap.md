@@ -35,13 +35,21 @@ Ziel: Ein App erstellen um Kundendaten zu verwalten.
 
    2.1 create-react-app
 
-   2.2 Components Hierarchy:
+   2.2 Components Hierarchy
 
    - KundenApp
      - KundenListe
        - KundeForm
        - KundeSuche
          - Kunde (Daten, Kunde bearbeiten, Kunde löschen,)
+
+   2.3 Components erstellen
+
+    	1. KundenApp
+    	2. KundenListe: Verbindung mit GET Route.
+    	3. KundeForm: Verbindung mit POST route.
+    	4. Kunde: Verbindung mit DELETE Route
+    	5. Kunde: Verbindung mit PUT Route
 
 3. Suche
 
