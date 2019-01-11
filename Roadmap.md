@@ -27,7 +27,7 @@ Ziel: Ein App erstellen um Kundendaten zu verwalten.
 
    - GET/kunden -  Darstellung von allen Kunden
    - POST/kunden - Kunde anlegen
-   - GET/kunden/:id - Kundendaten von einer spezifischen Kunde abrufen 
+   - GET/kunden/:id - Kundendaten von einer spezifischen Kunde abrufen
    - PUT/kunden/:id - Kundendaten bearbeiten
    - DELETE/kunden/:id - Kunde löschen
 
@@ -40,6 +40,7 @@ Ziel: Ein App erstellen um Kundendaten zu verwalten.
    - KundenApp
      - KundenListe
        - KundeForm
+       - EditKunde
        - KundeSuche
          - Kunde (Daten, Kunde bearbeiten, Kunde löschen,)
 

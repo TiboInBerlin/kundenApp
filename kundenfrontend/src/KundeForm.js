@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import './KundeForm.css';
 
 
+
 class KundeForm extends Component {
   constructor(props){
     super(props);
     this.state = {
-          inputNachname: 'GraceHopper',
-          inputVorname: 'Riverdale',
-          inputGeschlecht: 'Frau',
-          inputStrasse: 'Paradeisstr. 1024',
-          inputPostleitzahl: '12437',
-          inputOrt: 'Berlin'
+          inputNachname: '',
+          inputVorname: '',
+          inputGeschlecht: '',
+          inputStrasse: '',
+          inputPostleitzahl: '',
+          inputOrt: ''
         };
     this.handleChangeNachname = this.handleChangeNachname.bind(this);
     this.handleChangeVorname = this.handleChangeVorname.bind(this);
@@ -72,40 +73,60 @@ class KundeForm extends Component {
 
   render() {
     return(
-      <div>
-        <input
+      <div className="kunde-form" >
+        <div className="input-nachname">
+          <input
           type="text"
           value={this.state.inputNachname}
           onChange={this.handleChangeNachname}
+          placeholder="Nachname"
         />
-        <input
+        </div>
+        <div className="input-vorname">
+          <input
           type="text"
           value={this.state.inputVorname}
           onChange={this.handleChangeVorname}
+          placeholder="Vorname"
         />
+        </div>
+        <div className="input-geschlecht">
         <input
           type="text"
           value={this.state.inputGeschlecht}
           onChange={this.handleChangeGeschlecht}
+          placeholder="Geschlecht"
         />
+        </div>
+        <div className="input-strasse">
         <input
           type="text"
           value={this.state.inputStrasse}
           onChange={this.handleChangeStrasse}
+          placeholder="Strasse"
         />
+        </div>
+        <div className="input-postleitzahl">
         <input
           type="number"
           value={this.state.inputPostleitzahl}
           onChange={this.handleChangePostleitzahl}
+          placeholder="Postleitzahl"
         />
+        </div>
+        <div className="input-ort">
         <input
           type="text"
           value={this.state.inputOrt}
           onChange={this.handleChangeOrt}
+          placeholder="Ort"
         />
-        <button
+        </div>
+        <div className="form-button">
+          <button
           onClick={this.handleSubmit}
-        >Kunde Erstellen</button>
+          >Kunde Erstellen</button>
+        </div>
       </div>
     )
   }
